@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "GuardianAI",
+  "version": "1.2",
+  "description": "Captures pasted text on demand (Ctrl+Shift+V) and displays it in the extension popup.",
+  "permissions": [
+    "clipboardRead",
+    "storage",
+    "contextMenus",
+    "clipboardWrite",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "https://chat.openai.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "contentScript.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "host_permissions": [
+    "clipboardRead",
+    "clipboardWrite"
+  ]
+}
