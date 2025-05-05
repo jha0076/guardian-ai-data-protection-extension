@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guardian AI-Protech</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <div class="container-fluid home">
+    <div class="row">
+      <div class="col-md-12 header">
+        <img src="BlendLogo.png" alt="Blend Logo" style="width: 100px; height: 50px;">
+        <h5 class="tool-name">Guardian AI</h5>
+
+        <div>
+          <h8 class="tag-name" id="pageTitle">Protect your data with AI from AI</h8>
+        </div> 
+
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <div class="d-flex">
+              <button class="nav-link active" id="dataButton">Data</button>
+              <button class="nav-link" id="filesButton">Files</button>
+              <button class="nav-link" id="filesButton" disabled>Databases</button>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-md-9 col-lg-10 content">
+      <main>
+
+        <!-- Data Section -->
+        <div style="display: none;">
+          <p class="place-holders">Select The Guardian</p>
+          <label class='guardian-names' for="pre-guard">Presidio</label>
+          <input type="radio" name="guardian" value="Presidio" id="pre-guard" checked>
+          <label class='guardian-names' for="bedrock-guard">Bedrock</label>
+          <input type="radio" name="guardian" value="Bedrock" id="bedrock-guard">
+        </div>
+          <div id="dataSection">
+          <div class="input-section">
+            <div class="">
+              <p class="place-holders pt-0">Input</p>
+            </div>
+            
+            <textarea id="prompt-textarea" class="form-control" rows="5" placeholder="Enter text to analyze"></textarea>
+          </div>
+          <div class="button-container mt-3">
+            <button class="button custom-button" id="copy-org-text-btn">Copy To Clipboard</button>
+            <button class="button custom-button" id="copy-org-text-btn-browser">Copy To Browser</button>
+          </div>
+          <div class="button-container mt-4">
+            <button class="button custom-button" id="AnonymizeTextBtn">Anonymize</button>
+            <button class="button custom-button" id="RedactTextBtn">Redact</button>
+            <button class="button custom-button" id="ReviewTextBtn">Identify</button>
+          </div>
+          <div class="output-section mt-5">
+            <p class="place-holders">Output</p>
+            <div class="output-text">
+              <p id ='output-text'></p>
+              <textarea id="otput-textarea" class="form-control d-none" rows="5" ></textarea>
+              <div class="spinner-container d-none" id="spinner">
+              <div class="spinner-border" style="color: aqua;" role="status">
+                <span class="sr-only"></span>
+              </div>
+              </div>
+            </div>
+
+            <div class="button-container mt-3">
+              <button class="button custom-button" id="copy-to-clip-board-btn">Copy to Clipboard</button>
+              <button class="button custom-button" id="copy-to-browser-btn">Copy to Browser</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Files Section -->
+        <div id="filesSection" style="display: none;">
+          <div class="mt-4" id="file-upload-section">
+            <input type="file" id="fileInput">
+          </div>
+
+          <div class="mt-4" id="file-download-section">
+            <div class="spinner-container2 d-none" id="spinner-files">
+              <div class="spinner-border" style="color: aqua;" role="status">
+                <span class="sr-only"></span>
+              </div>
+              </div>
+          </div>
+
+          <div class="button-container mt-4">
+            <button class="button custom-button" id="AnonymizeFileBtn">Anonymize</button>
+            <button class="button custom-button" id="RedactFileBtn">Redact</button>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="popup.js"></script>
+
+</body>
+
+</html>
